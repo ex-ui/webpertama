@@ -1,41 +1,61 @@
 <!DOCTYPE html>
-<html lang="id">
+<html>
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>EX-UI - Website Keren</title>
+  <title>Web Santuy 😇</title>
   <style>
     body {
-      background: linear-gradient(to right, #1e3c72, #2a5298);
+      background: black;
       color: white;
       font-family: sans-serif;
       text-align: center;
       padding-top: 100px;
+      transition: all 0.5s;
     }
-    h1 {
-      font-size: 48px;
-    }
-    p {
-      font-size: 20px;
-    }
-    .button {
-      margin-top: 30px;
-      padding: 10px 20px;
-      background: #fff;
-      color: #2a5298;
+    button {
+      font-size: 24px;
+      padding: 15px 30px;
+      background: green;
+      color: white;
       border: none;
       border-radius: 10px;
-      font-weight: bold;
       cursor: pointer;
     }
-    .button:hover {
-      background: #ddd;
+    #jumpscare {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: black;
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+    #jumpscare img {
+      max-width: 90%;
+      max-height: 90%;
     }
   </style>
 </head>
 <body>
-  <h1>Selamat Datang di EX-UI</h1>
-  <p>Website ini dibuat dengan semangat dan cinta 🤍</p>
-  <button class="button" onclick="alert('Kamu pencet tombolnya 😎')">Klik Aku</button>
+
+  <h1>Klik Tombol di Bawah, Jangan Takut 😇</h1>
+  <button onclick="showJumpscare()">Klik Aku</button>
+
+  <div id="jumpscare">
+    <img src="https://i.ibb.co/hKjz7vj/jumpscare.gif" alt="Jumpscare">
+  </div>
+
+  <audio id="sfx" src="https://www.myinstants.com/media/sounds/windows-error.mp3"></audio>
+
+  <script>
+    function showJumpscare() {
+      document.getElementById("jumpscare").style.display = "flex";
+      document.getElementById("sfx").play();
+      document.body.style.background = "red";
+    }
+  </script>
+
 </body>
 </html>
